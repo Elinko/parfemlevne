@@ -1,0 +1,132 @@
+body, h1, h2, h3, h4, h5, h6, p {
+	font-family: 'Lato', sans-serif!important;
+}
+
+#fh5co-logo {
+	margin: 30px 0;
+}
+
+#fh5co-logo img {
+	margin-top: -5px;
+}
+
+#fh5co-blog-section {
+	padding: 4em 0 1em;
+}
+
+#fh5co-blog-section .heading-section {
+	margin-bottom: 3em;
+}
+
+#fh5co-page {
+	background: #fff7fc;
+}
+
+#fh5co-blog-section .nav-tabs {
+	display: flex;
+	justify-content: center;
+	border-bottom: 0;
+	padding-bottom: 5em
+}
+
+.fh5co-blog .blog-text {
+	text-align: center;
+	/* border: 1px solid rgba(255,0,185,1); */
+	box-shadow: none;
+	transition: 0.3s all ease-out;
+	cursor: pointer;
+	/* box-shadow: 0px 6px 62px -6px rgba(0, 0, 0, 0.3); */
+}
+
+.fh5co-blog .blog-text img {
+	transition: 0.3s all ease-out;
+	width: 150px;
+	margin: 0 auto 20px;
+}
+
+.fh5co-blog .blog-text .price-wrap {
+	display: flex;
+	justify-content: space-between;
+}
+
+.fh5co-blog .blog-text h3 {
+	/* color: rgba(255,0,185,1)!important; */
+
+}
+
+.fh5co-blog .blog-text .price-wrap span {
+	line-height: 22px;
+}
+
+.fh5co-blog .blog-text .price {
+	color: rgba(255,0,185,1);
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.fh5co-hero {
+	height: 550px;
+	background: rgb(255,214,0);
+	background: radial-gradient(circle, rgba(255,214,0,1) 0%, rgba(255,0,185,1) 100%, rgba(255,0,185,1) 100%);
+}
+
+#fh5co-blog-section .nav-tabs li a {
+	margin: 0 15px;
+}
+
+#fh5co-blog-section .nav-tabs li.active a {
+	/* background-color: unset!important;
+	background-position: 100% 0!important; */
+	transform: scale(1.15);
+}
+
+ .btn-primary {
+	background-color: unset!important;
+	color: #fff!important;
+	background-image: linear-gradient(90deg, rgba(255,214,0,1), rgba(255,0,185,1),rgba(255,214,0,1))!important;
+	transition: .3s all;
+	border-radius: 30px!important;
+	background-size: 200% 100%!important;
+	border: none;
+}
+
+.tab-content .row {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+@media(min-width: 992px) {
+	.btn-primary:hover, .btn-primary:focus {
+		background-color: unset!important;
+    background-position: 100% 0!important;
+	}
+
+	#fh5co-blog-section .nav-tabs li a:hover {
+		background-color: unset!important;
+		background-position: 100% 0!important;
+	}
+
+	.fh5co-blog .blog-text:hover {
+		box-shadow: 0px 6px 52px 0px rgba(255,0,185,0.15);
+	}
+
+	.fh5co-blog .blog-text:hover .btn-primary{
+		background-color: unset!important;
+		background-position: 100% 0!important;
+	}
+
+	.fh5co-blog .blog-text:hover img {
+		transform: scale(1.07);
+	}
+
+}
+
+.sf-menu a {
+	font-size: 16px;
+}
+
+.fh5co-cover {
+	height: 550px;
+	background: url('../images/bg2.png') center bottom no-repeat;
+	background-size: cover;
+}
