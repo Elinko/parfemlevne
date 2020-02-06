@@ -48,8 +48,8 @@ get_header();
 						$args = array(
 								'post_type' => 'parfemy',
 								'post_status' => 'publish',
-								'cat' => 221, // Whatever the category ID is for your aerial category
-								'posts_per_page' => 7,
+								'cat' => 576, // Whatever the category ID is for your aerial category
+								'posts_per_page' => 12,
 								'orderby' => 'ID', // Purely optional - just for some ordering
 								'order' => 'ASC' // Ditto
 						);
@@ -60,8 +60,8 @@ get_header();
 						$args = array(
 								'post_type' => 'parfemy',
 								'post_status' => 'publish',
-								'cat' => 218, // Whatever the category ID is for your aerial category
-								'posts_per_page' => 6,
+								'cat' => 571, // Whatever the category ID is for your aerial category
+								'posts_per_page' => 12,
 								'orderby' => 'ID', // Purely optional - just for some ordering
 								'order' => 'ASC' // Ditto
 						);
@@ -71,7 +71,7 @@ get_header();
 				  <div role="tabpanel" class="tab-pane fade in active" id="all">
 						<div class="row row-bottom-padded-md">
 
-							<?php for ($i=0; $i < 6; $i++): ?>
+							<?php for ($i=0; $i < 12; $i= $i+2): ?>
 
 								<div class="col-lg-4 col-sm-6">
 									<div class="fh5co-blog animate-box">
@@ -82,7 +82,7 @@ get_header();
 															<span class="price">od <?= the_field('cena', $woman->posts[$i]->ID);  ?> Kč </span>
 														</div>
 														<img class="img-responsive" src="<?php echo get_the_post_thumbnail_url($woman->posts[$i]->ID, 'full' );  ?>" alt="">
-														<h3><?= $woman->posts[$i]->  ?></h3>
+														<h3><?= get_the_title($woman->posts[$i]->ID) ?></h3>
 														<a href="https://<?= the_field('url', $woman->posts[$i]->ID);  ?>" class="btn btn-primary">Koupit</a>
 													</div>
 											</div>
@@ -97,7 +97,7 @@ get_header();
 															<span class="price">od <?= the_field('cena', $man->posts[$i]->ID);  ?> Kč </span>
 														</div>
 														<img class="img-responsive" src="<?php echo get_the_post_thumbnail_url($man->posts[$i]->ID, 'full' );  ?>" alt="">
-														<h3><?= the_title();  ?></h3>
+														<h3><?= get_the_title($man->posts[$i]->ID)  ?></h3>
 														<a href="https://<?= the_field('url', $man->posts[$i]->ID);  ?>" class="btn btn-primary">Koupit</a>
 													</div>
 											</div>
@@ -215,11 +215,25 @@ get_header();
 		<div id="fh5co-work">
 			<div class="container">
 				<div class="row">
+
+				</div>
+			</div>
+
+		<div id="fh5co-content-section" class="fh5co-section-gray">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+						<h3>Najnovšie články</h3>
+						<p>V našom blogu Vám prinášame novinky zo sveta, ale aj zaujímavé štatistiky alebo cenové ponuky.</p>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
 					<div class="col-md-12 work">
 						<div class="row">
-							<div class="col-md-6 col-md-pull-2">
-								<div class="half-inner" style="background-image:url(images/work-1.jpg);">
-								</div>
+							<div class="col-md-6">
+									<img src="<?php bloginfo('stylesheet_directory');?>/assets/images/bg.png" alt="">
 							</div>
 							<div class="col-md-6 animate-box">
 								<div class="desc">
@@ -243,157 +257,6 @@ get_header();
 									<p><a class="btn btn-primary" href="#">Learn More</a></p>
 								</div>
 							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div id="fh5co-features">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-4 animate-box">
-
-							<div class="feature-left">
-								<span class="icon">
-									<i class="icon-laptop"></i>
-								</span>
-								<div class="feature-copy">
-									<h3>Retina Ready</h3>
-									<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
-								</div>
-							</div>
-
-						</div>
-
-						<div class="col-md-4 animate-box">
-							<div class="feature-left">
-								<span class="icon">
-									<i class="icon-mobile"></i>
-								</span>
-								<div class="feature-copy">
-									<h3>Responsive Layout</h3>
-									<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
-								</div>
-							</div>
-
-						</div>
-						<div class="col-md-4 animate-box">
-							<div class="feature-left">
-								<span class="icon">
-									<i class="icon-browser"></i>
-								</span>
-								<div class="feature-copy">
-									<h3>Clean &amp; Minimal</h3>
-									<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div id="fh5co-services-section">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-						<h3>What We Do</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores, perspiciatis accusamus asperiores sint consequuntur debitis.</p>
-					</div>
-				</div>
-			</div>
-			<div class="container">
-				<div class="row text-center">
-					<div class="col-md-4 col-sm-4">
-						<div class="services animate-box">
-							<span><i class="icon-browser"></i></span>
-							<h3>Web Development</h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-4">
-						<div class="services animate-box">
-							<span><i class="icon-mobile"></i></span>
-							<h3>Mobile Apps</h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-4">
-						<div class="services animate-box">
-							<span><i class="icon-tools"></i></span>
-							<h3>UX Design</h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-4">
-						<div class="services animate-box">
-							<span><i class="icon-video"></i></span>
-							<h3>Video Editing</h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-4">
-						<div class="services animate-box">
-							<span><i class="icon-search"></i></span>
-							<h3>SEO Ranking</h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-4">
-						<div class="services animate-box">
-							<span><i class="icon-cloud"></i></span>
-							<h3>Cloud Based Apps</h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!-- END What we do -->
-
-		<div id="fh5co-content-section" class="fh5co-section-gray">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-						<h3>Happy Clients</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores, perspiciatis accusamus asperiores sint consequuntur debitis.</p>
-					</div>
-				</div>
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-4 animate-box">
-						<div class="testimony">
-							<blockquote>
-								&ldquo;If you’re looking for a top quality hotel look no further. We were upgraded free of charge to the Premium Suite, thanks so much&rdquo;
-							</blockquote>
-							<figure>
-								<img class="img-responsive" src="images/person_1.jpg" alt="user">
-							</figure>
-							<p class="author">John Doe</p>
-						</div>
-					</div>
-					<div class="col-md-4 animate-box">
-						<div class="testimony">
-							<blockquote>
-								&ldquo;Me and my wife had a delightful weekend get away here, the staff were so friendly and attentive. Highly Recommended&rdquo;
-							</blockquote>
-							<figure>
-								<img class="img-responsive" src="images/person_2.jpg" alt="user">
-							</figure>
-							<p class="author">Rob Smith</p>
-						</div>
-					</div>
-					<div class="col-md-4 animate-box">
-						<div class="testimony">
-							<blockquote>
-								&ldquo;If you’re looking for a top quality hotel look no further. We were upgraded free of charge to the Premium Suite, thanks so much&rdquo;
-							</blockquote>
-							<figure>
-								<img class="img-responsive" src="images/person_3.jpg" alt="user">
-							</figure>
-							<p class="author">Jane Doe</p>
 						</div>
 					</div>
 				</div>
