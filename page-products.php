@@ -33,6 +33,7 @@
 			$page = $pa*12;
 		} else {
 			$page=0;
+			$pa = 0;
 		}
 
 		$args = array(
@@ -118,6 +119,8 @@
 
 								}
 							?>
+							<br>
+							<div class="heureka-affiliate-category" data-trixam-positionid="82641" data-trixam-categoryid="1652" data-trixam-categoryfilters="" data-trixam-codetype="iframe" data-trixam-linktarget="blank"></div>
 					</div>
 
 					<div class="col-md-9  col-lg-9 tab-content">
@@ -150,26 +153,29 @@
 							wp_reset_query();
 							?>
 						</div>
-						<div class="row">
-							<div class="col-sm-4 text-center">
+						<div class="pagination">
 								<?php
 									if($pa) {
 										echo '<a href="' .get_home_url() .'/produkty?cat='. $catActual .'&pa='.($pa-1) . '" class="btn btn-primary">Spat</a>';
 									}
 								?>
-							</div>
 
-							<div class="col-sm-4 text-center">
+								<?php
+								if($pa) {
+									echo '<a href="' .get_home_url() .'/produkty?cat='. $catActual .'&pa='.($pa-1) . '" class="">'.($pa-1).'</a>';
+								}
+								echo '<a href="' .get_home_url() .'/produkty?cat='. $catActual .'&pa='.($pa) . '" class="actual">'.($pa).'</a>';
+								if(count($products->posts) ==12) {
+									echo '<a href="' .get_home_url() .'/produkty?cat='. $catActual .'&pa='.($pa+1) .'" class="">'.($pa+1).'</a>' ;
+								}
 
-							</div>
+								?>
 
-							<div class="col-sm-4 text-center">
 								<?php
 									if(count($products->posts) ==12) {
 										echo '<a href="' .get_home_url() .'/produkty?cat='. $catActual .'&pa='.($pa+1) .'" class="btn btn-primary">Dalsi</a>' ;
 									}
 								?>
-							</div>
 
 						</div>
 						<br>

@@ -22,13 +22,16 @@ get_header();
 				<div class="desc animate-box">
 					<h2>LEVNÉ A KVALITNÍ <br>PARFÉMY</h2>
 					<span>Výběr nejprodávanějších <br> a levných parfémů na českém trhu.</span>
-					<p><a class="btn btn-primary btn-lg btn-learn" href="#">Všechny produkty</a></p>
+					<p><a class="btn btn-primary btn-lg btn-learn" href="<?= get_home_url();  ?>/produkty?cat=vsetky">Všechny produkty</a></p>
 				</div>
 			</div>
 		</div>
 
 		<div id="fh5co-blog-section">
 			<div class="container">
+				<div class="text-center">
+					<div class="heureka-affiliate-category" data-trixam-positionid="82639" data-trixam-categoryid="1652" data-trixam-categoryfilters="" data-trixam-codetype="iframe" data-trixam-linktarget="blank"></div>
+				 </div>
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
 						<h3>Nejprodávanější parfémy</h3>
@@ -179,46 +182,6 @@ get_header();
 		</div>
 
 
-		<div id="fh5co-partner">
-			<div class="container">
-				<div class="partner-wrap">
-					<div class="wrap">
-						<div class="partner animate-box">
-							<div class="inner">
-								<img class="img-responsive" src="images/logo-1.png" alt="">
-							</div>
-						</div>
-						<div class="partner animate-box">
-							<div class="inner">
-								<img class="img-responsive" src="images/logo-2.png" alt="">
-							</div>
-						</div>
-						<div class="partner animate-box">
-							<div class="inner">
-								<img class="img-responsive" src="images/logo-3.png" alt="">
-							</div>
-						</div>
-						<div class="partner animate-box">
-							<div class="inner">
-								<img class="img-responsive" src="images/logo-4.png" alt="">
-							</div>
-						</div>
-						<div class="partner animate-box">
-							<div class="inner">
-								<img class="img-responsive" src="images/logo-5.png" alt="">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div id="fh5co-work">
-			<div class="container">
-				<div class="row">
-
-				</div>
-			</div>
-
 		<div id="fh5co-content-section" class="fh5co-section-gray">
 			<div class="container">
 				<div class="row">
@@ -230,35 +193,23 @@ get_header();
 			</div>
 			<div class="container">
 				<div class="row">
-					<div class="col-md-12 work">
-						<div class="row">
-							<div class="col-md-6">
-									<img src="<?php bloginfo('stylesheet_directory');?>/assets/images/bg.png" alt="">
-							</div>
-							<div class="col-md-6 animate-box">
-								<div class="desc">
-									<h3><a href="#">Guitar Music</a></h3>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-									<p><a class="btn btn-primary" href="#">Learn More</a></p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-12 work">
-						<div class="row">
-							<div class="col-md-6 col-md-push-6">
-								<div class="half-inner half-inner2" style="background-image:url(images/work-2.jpg);">
-								</div>
-							</div>
-							<div class="col-md-6 col-md-pull-6 animate-box">
-								<div class="desc desc2">
-									<h3><a href="#">A Cube of Ice</a></h3>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-									<p><a class="btn btn-primary" href="#">Learn More</a></p>
-								</div>
-							</div>
-						</div>
-					</div>
+					<?php
+						$args = array(
+						  'numberposts' => 2
+						);
+						$latest_posts = new WP_Query( $args );
+					?>
+
+					<?php
+						$counter=1;
+						while ( $latest_posts->have_posts() ) {
+							$latest_posts->the_post();
+					    set_query_var( 'counter', $counter );
+							get_template_part( 'template-parts/content', get_post_type() );
+							$counter++;
+						}
+					?>
+
 				</div>
 			</div>
 		</div>

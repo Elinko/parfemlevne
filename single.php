@@ -8,30 +8,36 @@
  */
 
 get_header();
+
+if ( have_posts() ) :
+	while ( have_posts() ) :
+
+		the_post();
+
+	endwhile;
+
+else :
+
+	get_template_part( 'template-parts/content', 'none' );
+endif;
+
 ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+	<div class="fh5co-hero-bg">
+	</div>
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
-
-			get_template_part( 'template-parts/content', get_post_type() );
-
-			the_post_navigation();
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
-		endwhile; // End of the loop.
-		?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+	<div id="fh5co-content-section" class="">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+					<h3><?php the_title() ?></h3>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<?php the_content() ?>
+		</div>
+	</div>
 
 <?php
-get_sidebar();
 get_footer();

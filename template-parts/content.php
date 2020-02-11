@@ -8,52 +8,36 @@
  */
 
 ?>
+<div class="col-md-12 work">
+	<div class="row">
+		<?php if( ($counter % 2 == 1) ): ?>
+			<div class="col-md-6 text-center">
+				<a href="<?php echo get_post_permalink() ?>">
+					<?php parfemlevne_post_thumbnail(); ?>
+				</a>
+			</div>
+			<div class="col-md-6 animate-box">
+				<div class="desc">
+					<?php the_title( '<h3 class="entry-title">', '</h3>' ); ?>
+					<?php the_excerpt() ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
+					<p><a class="btn btn-primary" href="<?php echo get_post_permalink() ?>">Čti více</a></p>
+				</div>
+			</div>
+		<?php else: ?>
+			<div class="col-md-6 animate-box">
+				<div class="desc">
+					<?php the_title( '<h3 class="entry-title">', '</h3>' ); ?>
+					<?php the_excerpt() ?>
 
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-				parfemlevne_posted_on();
-				parfemlevne_posted_by();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
-
-	<?php parfemlevne_post_thumbnail(); ?>
-
-	<div class="entry-content">
-		<?php
-		the_content( sprintf(
-			wp_kses(
-				/* translators: %s: Name of current post. Only visible to screen readers */
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'parfemlevne' ),
-				array(
-					'span' => array(
-						'class' => array(),
-					),
-				)
-			),
-			get_the_title()
-		) );
-
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'parfemlevne' ),
-			'after'  => '</div>',
-		) );
-		?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php parfemlevne_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
+					<p><a class="btn btn-primary" href="<?php echo get_post_permalink() ?>">Čti více</a></p>
+				</div>
+			</div>
+			<div class="col-md-6  text-center">
+				<a href="<?php echo get_post_permalink() ?>">
+					<?php parfemlevne_post_thumbnail(); ?>
+				</a>
+			</div>
+		<?php endif ?>
+	</div>
+</div>

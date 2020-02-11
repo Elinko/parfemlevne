@@ -19,7 +19,10 @@ body, h1, h2, h3, h4, h5, h6, p {
 }
 
 #fh5co-page {
-	background: #fff7fc;
+	background: #fafafa;
+}
+.fh5co-cover .desc {
+	top: 45%;
 }
 
 #fh5co-blog-section .nav-tabs {
@@ -138,13 +141,18 @@ body, h1, h2, h3, h4, h5, h6, p {
 
 .fh5co-cover {
 	height: 550px;
-	background: url('../images/bg2.png') center bottom no-repeat;
+	background: url('../images/bg2.png') center bottom 20px no-repeat;
 	background-size: cover;
 }
 
 .work img {
 	max-width: 100%;
+  height: auto;
 	box-shadow: 0px 6px 62px -6px rgba(0, 0, 0, 0.3);
+}
+
+.animate-box h3 {
+	margin: 15px 0 20px;
 }
 
 .sidebar h3 {
@@ -166,6 +174,37 @@ body, h1, h2, h3, h4, h5, h6, p {
 }
 .sidebar a {
 	color: #5a5a5a;
+}
+
+.pagination {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.pagination a {
+	font-size: 18px;
+	margin: 0 15px;
+}
+
+.pagination a.actual {
+	padding: 5px 15px!important;
+	border-radius: 20px;
+	color: #fff;
+	font-weight: bold;
+	background:  rgba(255,214,0,1);
+}
+
+#footer {
+	background:  rgba(255,214,0,1);
+}
+
+#footer h3, #footer ul li a {
+	color: #848484;
+}
+
+#footer .fh5co-copyright {
+    border-top: 1px solid #848484;
 }
 
 @media(min-width: 992px) {
