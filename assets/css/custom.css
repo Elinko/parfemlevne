@@ -197,6 +197,7 @@ body, h1, h2, h3, h4, h5, h6, p {
 
 #footer {
 	background:  rgba(255,214,0,1);
+	padding-top: 40px;
 }
 
 #footer h3, #footer ul li a {
@@ -205,6 +206,13 @@ body, h1, h2, h3, h4, h5, h6, p {
 
 #footer .fh5co-copyright {
     border-top: 1px solid #848484;
+		padding: 20px;
+}
+#footer p {
+	margin-bottom: 0;
+}
+#footer [class*="col"] {
+	padding-bottom: 0;
 }
 
 @media(min-width: 992px) {

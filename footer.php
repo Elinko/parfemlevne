@@ -21,7 +21,7 @@
 							<h3>O nás</h3>
 							<p>Přinášíme Vám ty nejkvalitnější parfémy za nejlepší ceny v eshopech</p>
 						</div>
-						<div class="col-md-6 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
+						<div class="col-md-9 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
 							<h3>Top 3 parfémy</h3>
  							<div class="heureka-affiliate-category" data-trixam-positionid="82640" data-trixam-categoryid="1652" data-trixam-categoryfilters="" data-trixam-codetype="iframe" data-trixam-linktarget="blank"></div>
 
